@@ -77,16 +77,15 @@ class TestDelivery(unittest.TestCase, Delivery):
         cost = delv.full_cost_of_delivery(frag, s, d, l)
         assert cost == 400
 
-# Ожидаемо падающие тесты
-    @ pytest.xfail()
+# Негативные тесты
+    #@pytest.mark.xfail
     def test_full_cost_of_delivery_400(self):
-        delv = Delivery
-        frag = True
-        s = 31
-        d = "big"
-        l = "vh"
-        cost = delv.full_cost_of_delivery(frag, s, d, l)
-        assert Exception
-
+        with pytest.raises(SystemExit):
+            frag = True
+            s = 31
+            d = "big"
+            l = "vh"
+            delv = Delivery(frag, s, d, l)
+            assert delv.full_cost_of_delivery(frag, s, d, l)
 
 
