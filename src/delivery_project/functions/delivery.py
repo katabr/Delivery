@@ -41,22 +41,28 @@ class Delivery():
         cost_s = 0
         
 
-        while ((s > 30) and (frag ==True)):
-            print ("Хрупкие товары не могут быть доставлены далее 30 км. Введите другое расстояние.")
-        while ((s < 0)):
+        if ((s < 0)):
+            # if ((fragility = True) and (s > 30)):
             print("Расстояние не может быть отрицательным. Введите другое расстояние.")
-            
+            #s = float(input())
 
-        if s > 30:
-            cost_s = 300
-        elif 30 >= s > 10:
-            cost_s = 200
-        elif 10 >= s > 2:
-            cost_s = 100
-        elif 2 >= s >= 0:
-            cost_s = 50
-        print(f"Надбавка за расстояние составит {cost_s} рублей.")
-        return cost_s
+        if ((s > 30) and (frag ==True)):
+            #if ((fragility = True) and (s > 30)):
+            print ("Хрупкие товары не могут быть доставлены далее 30 км. Введите другое расстояние.")
+            #s = float(input())
+            sys.exit("Game over :)")
+        else :
+
+            if ((s > 30) and (frag ==False)):
+                cost_s = 300
+            elif 30 >= s > 10:
+                cost_s = 200
+            elif 10 >= s > 2:
+                cost_s = 100
+            elif 2 >= s >= 0:
+                cost_s = 50
+            print(f"Надбавка за расстояние составит {cost_s} рублей.")
+            return cost_s
 
     # Вводим размеры (возвращает добавку по габаритам)
     def dimensions(self, d):
