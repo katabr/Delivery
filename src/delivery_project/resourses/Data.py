@@ -8,7 +8,7 @@ class TestData:
                 "s" : 31,
                 "d" : "small",
                 "l" : "vh"
-            } : 800
+            } : 640
         },
         {
             {
@@ -51,14 +51,14 @@ class TestData:
             }: 400
         },
 
-        # Ожидаемо падающие тесты
+        # Негативные тесты
         {
                 {
                     "frag" : True,
                     "s" : 31,
                     "d" : "big",
                     "l" : "vh"
-                } : Exception
+                } : SystemExit
             }
     }
 
