@@ -79,7 +79,7 @@ class TestDelivery(unittest.TestCase, Delivery):
 
 # Негативные тесты
     
-    def test_full_cost_of_delivery_400(self):
+    def test_full_cost_of_delivery_exit(self):
         with pytest.raises(SystemExit):
             frag = True
             s = 31
