@@ -78,7 +78,7 @@ class TestDelivery(unittest.TestCase, Delivery):
         assert cost == 400
 
 # Негативные тесты
-    #@pytest.mark.xfail
+    
     def test_full_cost_of_delivery_400(self):
         with pytest.raises(SystemExit):
             frag = True
